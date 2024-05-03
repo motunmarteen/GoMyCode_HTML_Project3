@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: bisque;
+}
+
+.header .navigation_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 146px;
+    position: sticky;
+    top: 0;
+}
+
+.logo a {
+    font-size: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #803D3B;
+}
+
+.logo p span {
+    color: blue;
+}
+
+.menu .unordered_list_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    list-style-type: none;
+}
+
+.unordered_list_menu li a {
+    text-decoration: none;
+    color: #803D3B;
+    font-size: 19px;
+}
+
+.main_sections .hero_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: bisque;
+    gap: 40px;
+    height: 90vh; /* Specify a height for the hero section */
+    background-image: url(/images/meat-stew-with-tomato-herbs-galetta-stick.jpg); /* Adjust the image path */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.hero_section h1 {
+    font-size: 70px;
+}
+
+.hero_section button {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px transparent ;
+    background-color: bisque;
+    font-size: 20px;
+}
+
+.hero_section button:hover {
+    background-color: #803D3B;
+    color: bisque;
+}
+
+.menu_items {
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    background-color: bisque;
+}
+
+.menu_items div {
+    /* height: 30px; */
+    padding: 15px;
+    /* border: 1px solid black; */
+}
+
+.aboutus .two-column {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.aboutus .two-column {
+    
+}
