@@ -1,59 +1,68 @@
-* {
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    --color1: bisque ;
+    --color2: #803D3B ;
+}
+
+/* ======================================= */
+
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
     position: relative;
+    background-color: var(--color2);
+    padding: 15px 40px;
 }
-
-/* Header Styling */
-.header {
-    background-color: bisque;
+.logo img {width: 70px;}
+.menu {display: flex;}
+.menu li {padding-left: 30px;}
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    transition: 0.15s ease-in-out;
+    position: relative;
+    text-transform: uppercase;
 }
-
-/* Navigation styling */
-.header .navigation_section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 146px;
-    position: sticky;
-    top: 0;
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color1);
+    transition: 0.15s ease-in-out;
 }
-
-.logo {
-    border: 3px solid #803D3B;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90px;
-    height: 50px;
-    border-radius: 5px;
-
-}
-
-.logo a {
-    font-size: 25px;
+.menu li a:hover:after {width: 100%;}
+.open-menu , .close-menu {
+    position: absolute;
+    color: var(--color1);
     cursor: pointer;
-    text-decoration: none;
-    color: #803D3B;
+    font-size: 1.5rem;
+    display: none;
 }
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+#check {display: none;}
 
-.logo p span {
-    color: purple;
-}
-
-.menu .unordered_list_menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 25px;
-    list-style-type: none;
-}
-
-.unordered_list_menu li a {
-    text-decoration: none;
-    color: #803D3B;
-    font-size: 19px;
-}
+/* Hero Section */
 
 .main_sections .hero_section {
     display: flex;
@@ -62,7 +71,7 @@
     align-items: center;
     color: bisque;
     gap: 40px;
-    height: 90vh;
+    height: 100vh;
     background-image: url(/images/meat-stew-with-tomato-herbs-galetta-stick.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -97,9 +106,7 @@
 }
 
 .menu_items div {
-    /* height: 30px; */
     padding: 15px;
-    /* border: 1px solid black; */
 }
 
 .aboutus .two-column{
@@ -207,7 +214,7 @@
     color: #803D3B;
 }
 
-
+/* Footer */
 .footer {
     background-color: #803D3B;
     color: bisque;
@@ -245,4 +252,39 @@
 
 .social-icons .social-icon:hover {
     color: #E4C59E;
+}
+
+@media(max-width: 768px){
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: all 0.2s ease-in-out;
+    }
+    .menu li {margin-top: 40px;}
+    .menu li a {padding: 10px;}
+    .open-menu , .close-menu {display: block;}
+    #check:checked ~ .menu {right: 0;}
+
+    .hero_section h1 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .menu_items {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .aboutus .two-column {
+        display: flex;
+        flex-direction: column;
+    }
 }
